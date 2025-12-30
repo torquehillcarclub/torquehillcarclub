@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TORQUE HILL - Cameron Highlands Car Club</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="media/torque.png" alt="Torque Hill Logo" class="logo">
+                <span>TORQUE HILL</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        
+        <!-- Animated Mountains -->
+        <div class="mountains">
+            <div class="mountain mountain-1"></div>
+            <div class="mountain mountain-2"></div>
+            <div class="mountain mountain-3"></div>
+        </div>
+        
+        <!-- Animated Road -->
+        <div class="road-container">
+            <svg class="road" viewBox="0 0 400 600" preserveAspectRatio="none">
+                <path class="road-path" d="M 200 600 Q 150 450, 200 300 Q 250 150, 200 0" />
+                <path class="road-line" d="M 200 600 Q 150 450, 200 300 Q 250 150, 200 0" />
+            </svg>
+        </div>
+        
+        
+        <!-- Gear Animations - Realistic -->
+        <div class="gear-left">
+            <svg class="gear-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="gearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ff4655"/>
+                        <stop offset="100%" style="stop-color:#8b0000"/>
+                    </linearGradient>
+                </defs>
+                <g class="gear-rotate">
+                    <!-- Gear teeth -->
+                    <path d="M50,5 L55,15 L45,15 Z M75,12 L77,22 L68,18 Z M88,25 L90,35 L82,28 Z 
+                             M95,50 L85,55 L85,45 Z M88,75 L82,72 L90,65 Z M75,88 L68,82 L77,78 Z 
+                             M50,95 L45,85 L55,85 Z M25,88 L23,78 L32,82 Z M12,75 L10,65 L18,72 Z 
+                             M5,50 L15,45 L15,55 Z M12,25 L18,28 L10,35 Z M25,12 L32,18 L23,22 Z" 
+                          fill="url(#gearGrad)" opacity="0.8"/>
+                    <!-- Center circle -->
+                    <circle cx="50" cy="50" r="20" fill="url(#gearGrad)" stroke="#e31c25" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="10" fill="#1a0505"/>
+                </g>
+            </svg>
+        </div>
+        <div class="gear-right">
+            <svg class="gear-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <g class="gear-rotate-reverse">
+                    <path d="M50,5 L55,15 L45,15 Z M75,12 L77,22 L68,18 Z M88,25 L90,35 L82,28 Z 
+                             M95,50 L85,55 L85,45 Z M88,75 L82,72 L90,65 Z M75,88 L68,82 L77,78 Z 
+                             M50,95 L45,85 L55,85 Z M25,88 L23,78 L32,82 Z M12,75 L10,65 L18,72 Z 
+                             M5,50 L15,45 L15,55 Z M12,25 L18,28 L10,35 Z M25,12 L32,18 L23,22 Z" 
+                          fill="url(#gearGrad)" opacity="0.8"/>
+                    <circle cx="50" cy="50" r="20" fill="url(#gearGrad)" stroke="#e31c25" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="10" fill="#1a0505"/>
+                </g>
+            </svg>
+        </div>
+        
+        <!-- Exhaust Flames -->
+        <div class="exhaust-left">
+            <svg class="flame-svg" viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:#e31c25"/>
+                        <stop offset="50%" style="stop-color:#ff4655"/>
+                        <stop offset="100%" style="stop-color:#ffd700"/>
+                    </linearGradient>
+                </defs>
+                <path class="flame" d="M30,80 Q20,60 25,40 Q22,50 20,35 Q18,45 15,25 Q20,35 25,20 Q23,28 30,5 
+                         Q37,28 35,20 Q40,35 45,25 Q42,45 40,35 Q38,50 35,40 Q40,60 30,80 Z" 
+                      fill="url(#flameGrad)" opacity="0.8" filter="url(#glow)"/>
+            </svg>
+        </div>
+        <div class="exhaust-right">
+            <svg class="flame-svg" viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
+                <path class="flame" d="M30,80 Q20,60 25,40 Q22,50 20,35 Q18,45 15,25 Q20,35 25,20 Q23,28 30,5 
+                         Q37,28 35,20 Q40,35 45,25 Q42,45 40,35 Q38,50 35,40 Q40,60 30,80 Z" 
+                      fill="url(#flameGrad)" opacity="0.8" filter="url(#glow)"/>
+            </svg>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-logo">
+                <div class="logo-circle">
+                    <div class="logo-text">TORQUE<span class="highlight">HILL</span></div>
+                </div>
+            </div>
+            <h1 class="hero-title">Cameron Highlands Car Club</h1>
+            <p class="hero-subtitle">Where Passion Meets Performance</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">Discover More</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScpekSsdllzJqrwIO35U0nBePTTWSd5483W23tGuI9l2rQrhQ/viewform?usp=dialog" target="_blank" class="btn btn-secondary">Join Us</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About <span class="highlight">TORQUE HILL</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to TORQUE HILL, the premier car enthusiast community in Cameron Highlands. We are a passionate group of automotive lovers who share a common bond - the thrill of the drive and the beauty of the highlands.</p>
+                    <p>Founded by enthusiasts, for enthusiasts, we organize regular meet-ups, scenic drives through the winding mountain roads, and exclusive events that celebrate automotive culture.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Members</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Events Yearly</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Years Strong</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">🏔️</div>
+                        <h3>Scenic Routes</h3>
+                        <p>Experience the breathtaking mountain roads of Cameron Highlands</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏁</div>
+                        <h3>Track Days</h3>
+                        <p>Exclusive track day events for members to push their limits</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Community</h3>
+                        <p>Join a family of like-minded automotive enthusiasts</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>Workshops</h3>
+                        <p>Learn from experts with hands-on technical workshops</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Upcoming <span class="highlight">Events</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="date-day">15</span>
+                        <span class="date-month">JAN</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Sunrise Mountain Drive</h3>
+                        <p class="event-location">📍 Cameron Highlands Circuit</p>
+                        <p>Join us for an early morning cruise through the misty highlands. Coffee and breakfast included!</p>
+                        <a href="#contact" class="event-link">Register Now →</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="date-day">28</span>
+                        <span class="date-month">JAN</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Monthly Meet & Greet</h3>
+                        <p class="event-location">📍 Brinchang Town</p>
+                        <p>Monthly gathering for all members. Share stories, show off your rides, and make new friends.</p>
+                        <a href="#contact" class="event-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="date-day">10</span>
+                        <span class="date-month">FEB</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Tech Workshop: Suspension Tuning</h3>
+                        <p class="event-location">📍 TH Garage</p>
+                        <p>Expert-led workshop on suspension setup and tuning for mountain driving conditions.</p>
+                        <a href="#contact" class="event-link">Book Your Spot →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="highlight">Gallery</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="media/2.png" alt="TORQUE HILL Group Drive" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="media/3.png" alt="TORQUE HILL Track Day" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="media/hilux.gif" alt="TORQUE HILL Hilux" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="media/ae101.gif" alt="TORQUE HILL AE101" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="media/4.jpg" alt="TORQUE HILL Car Meet" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="media/5.jpg" alt="TORQUE HILL Drive" class="gallery-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Join <span class="highlight">The Club</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p class="contact-intro">Ready to join the TORQUE HILL family? Connect with us through any of the channels below!</p>
+                    
+                    <!-- Animated GIF Container -->
+                    <div class="gif-container">
+                        <img src="media/1.gif" alt="TORQUE HILL Animation" class="hero-gif">
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <strong>Email</strong>
+                                <p>torquehillclub@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <p>+60163452282</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <strong>Location</strong>
+                                <p>Cameron Highlands, Pahang</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/_torquehill_?igsh=MWhjZW42Z3lqbDQ1aw==" target="_blank" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            Follow us on Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="join-form-section">
+                    <div class="join-content">
+                        <h3>Become a Member</h3>
+                        <p>Join our community of automotive enthusiasts and experience the thrill of driving through Cameron Highlands' scenic routes.</p>
+                        <ul class="benefits-list">
+                            <li>🏁 Exclusive track day events</li>
+                            <li>🚗 Monthly group drives</li>
+                            <li>🔧 Technical workshops</li>
+                            <li>🤝 Networking opportunities</li>
+                            <li>📸 Featured in club events</li>
+                        </ul>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScpekSsdllzJqrwIO35U0nBePTTWSd5483W23tGuI9l2rQrhQ/viewform?usp=dialog" target="_blank" class="btn btn-primary btn-full join-btn">
+                            Apply Now →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">TORQUE<span class="highlight">HILL</span></h3>
+                    <p>Cameron Highlands Premier Car Club</p>
+                    <p class="footer-tagline">Where Passion Meets Performance</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Join Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <ul>
+                        <li>📧 torquehillclub@gmail.com</li>
+                        <li>📱 +60163452282</li>
+                        <li>📍 Cameron Highlands, Pahang</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <a href="https://www.instagram.com/_torquehill_?igsh=MWhjZW42Z3lqbDQ1aw==" target="_blank" class="footer-social-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        @_torquehill_
+                    </a>
+                    <p class="footer-follow">Join our community of car enthusiasts</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-line"></div>
+                <p class="footer-copyright">&copy; 2025 TORQUE HILL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
