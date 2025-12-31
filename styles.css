@@ -58,6 +58,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .nav-brand {
@@ -1608,7 +1609,10 @@ section {
     }
     
     .language-toggle {
-        margin-left: 1rem;
+        position: fixed;
+        top: 14px;
+        right: 70px;
+        margin: 0;
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
         z-index: 1001;
@@ -1696,6 +1700,17 @@ section {
     
     .nav-brand .logo {
         height: 25px;
+    }
+    
+    .language-toggle {
+        right: 60px;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+        gap: 0.2rem;
+    }
+    
+    .lang-text {
+        font-size: 0.7rem;
     }
     
     .hero-title {
@@ -2096,7 +2111,19 @@ section {
     }
     
     .language-toggle {
-        display: none;
+        display: flex;
+        position: fixed;
+        top: 14px;
+        right: 70px;
+        margin: 0;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+        z-index: 1001;
+        gap: 0.3rem;
+    }
+    
+    .lang-text {
+        font-size: 0.75rem;
     }
     
     .scroll-indicator {
