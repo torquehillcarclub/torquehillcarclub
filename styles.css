@@ -2209,15 +2209,7 @@ section {
     }
     
     .lightbox-zoom-controls {
-        top: 10px;
-        left: 10px;
-        gap: 8px;
-    }
-    
-    .zoom-btn {
-        width: 44px;
-        height: 44px;
-        font-size: 24px;
+        display: none;
     }
     
     .lightbox-caption {
