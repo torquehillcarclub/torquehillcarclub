@@ -274,7 +274,14 @@
     <!-- Image Lightbox Modal -->
     <div id="imageLightbox" class="lightbox">
         <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightboxImage">
+        <div class="lightbox-zoom-controls">
+            <button class="zoom-btn zoom-in" id="zoomIn" aria-label="Zoom In">+</button>
+            <button class="zoom-btn zoom-out" id="zoomOut" aria-label="Zoom Out">−</button>
+            <button class="zoom-btn zoom-reset" id="zoomReset" aria-label="Reset Zoom">⟲</button>
+        </div>
+        <div class="lightbox-image-container">
+            <img class="lightbox-content" id="lightboxImage">
+        </div>
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 
