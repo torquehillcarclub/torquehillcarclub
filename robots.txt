@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://torquehillcarclub.github.io/torquehillcarclub/sitemap.xml
