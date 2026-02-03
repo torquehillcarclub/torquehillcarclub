@@ -1645,7 +1645,7 @@
     <script>
         // Optimized 3D Model Loading System - Click to Load + Smart Unloading
         (function() {
-            const MAX_ACTIVE_MODELS = 2; // Maximum models loaded at once
+            const MAX_ACTIVE_MODELS = 8; // Allow more models to stay loaded
             const activeModels = new Set();
             const modelCards = document.querySelectorAll('.model-showcase-card');
 
@@ -1687,9 +1687,10 @@
                 const src = iframe.getAttribute('data-src');
                 if (!src || iframe.classList.contains('loaded')) return;
 
-                // Unload excess models if needed
-                while (activeModels.size >= MAX_ACTIVE_MODELS) {
-                    unloadFarthestModel(card);
+                // Only unload if we have way too many models (soft limit)
+                if (activeModels.size >= MAX_ACTIVE_MODELS) {
+                    // Only unload models that are far from viewport
+                    unloadDistantModels(card);
                 }
 
                 // Show loading state
@@ -1718,29 +1719,25 @@
                     activeModels.delete(card);
                 };
             }
-
-            // Unload model farthest from viewport
-            function unloadFarthestModel(currentCard) {
-                let farthest = null;
-                let maxDistance = -1;
-
-                const viewportCenter = window.innerHeight / 2;
+            
+            // Only unload models that are far from viewport (not visible)
+            function unloadDistantModels(currentCard) {
+                const viewportTop = window.scrollY;
+                const viewportBottom = viewportTop + window.innerHeight;
+                const buffer = window.innerHeight * 3; // 3 viewport heights buffer
 
                 activeModels.forEach(card => {
                     if (card === currentCard) return;
-                    const rect = card.getBoundingClientRect();
-                    const cardCenter = rect.top + rect.height / 2;
-                    const distance = Math.abs(cardCenter - viewportCenter);
                     
-                    if (distance > maxDistance) {
-                        maxDistance = distance;
-                        farthest = card;
+                    const rect = card.getBoundingClientRect();
+                    const cardTop = rect.top + viewportTop;
+                    const cardBottom = cardTop + rect.height;
+
+                    // Only unload if really far away
+                    if (cardBottom < viewportTop - buffer || cardTop > viewportBottom + buffer) {
+                        unloadModel(card);
                     }
                 });
-
-                if (farthest) {
-                    unloadModel(farthest);
-                }
             }
 
             // Unload a model to free resources
