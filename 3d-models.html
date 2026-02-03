@@ -58,7 +58,36 @@
             pointer-events: none;
         }
 
-        .glow-orb {\n            position: absolute;\n            border-radius: 50%;\n            filter: blur(100px);\n            /* Animation disabled for performance */\n            /* animation: orbFloat 15s ease-in-out infinite; */\n        }\n\n        .glow-orb-1 {\n            width: 600px;\n            height: 600px;\n            background: radial-gradient(circle, rgba(227, 28, 37, 0.4) 0%, transparent 70%);\n            top: -200px;\n            left: -200px;\n        }\n\n        .glow-orb-2 {\n            width: 500px;\n            height: 500px;\n            background: radial-gradient(circle, rgba(255, 107, 107, 0.3) 0%, transparent 70%);\n            bottom: -150px;\n            right: -150px;\n            /* animation-delay: -5s; */\n        }\n\n        .glow-orb-3 {\n            width: 300px;\n            height: 300px;\n            background: radial-gradient(circle, rgba(227, 28, 37, 0.5) 0%, transparent 70%);\n            top: 50%;\n            left: 50%;\n            transform: translate(-50%, -50%);\n            /* Animation disabled for performance */\n            /* animation: orbPulse 4s ease-in-out infinite; */\n        }
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+        }
+
+        .glow-orb-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(227, 28, 37, 0.4) 0%, transparent 70%);
+            top: -200px;
+            left: -200px;
+        }
+
+        .glow-orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.3) 0%, transparent 70%);
+            bottom: -150px;
+            right: -150px;
+        }
+
+        .glow-orb-3 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(227, 28, 37, 0.5) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
         @keyframes orbFloat {
             0%, 100% { transform: translate(0, 0) scale(1); }
@@ -649,32 +678,290 @@
             .models-flex {
                 grid-template-columns: 1fr;
             }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
         }
 
         @media (max-width: 768px) {
+            .models-page-hero {
+                min-height: 60vh;
+                padding-top: 70px;
+            }
+            
+            .hero-eyebrow {
+                padding: 8px 16px;
+                font-size: 0.75rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
             .hero-stats {
-                gap: 2rem;
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .stat-item {
+                min-width: 80px;
             }
             
             .stat-number {
-                font-size: 2rem;
+                font-size: 1.75rem;
+            }
+            
+            .stat-label {
+                font-size: 0.7rem;
+            }
+            
+            .filter-section {
+                top: 60px;
+            }
+            
+            .filter-container {
+                padding: 1rem 0;
+                justify-content: flex-start;
+            }
+            
+            .filter-pills {
+                gap: 8px;
+                padding: 0 15px;
+            }
+            
+            .filter-pill {
+                padding: 10px 16px;
+                font-size: 0.8rem;
+                gap: 6px;
+            }
+            
+            .filter-pill .pill-icon {
+                font-size: 0.9rem;
+            }
+            
+            .filter-pill .pill-count {
+                padding: 2px 6px;
+                font-size: 0.65rem;
+            }
+            
+            .models-showcase {
+                padding: 2rem 0;
+            }
+            
+            .brand-header {
+                padding: 1.5rem;
+                gap: 1rem;
+            }
+            
+            .brand-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .brand-info h2 {
+                font-size: 1.5rem;
+            }
+            
+            .brand-info p {
+                font-size: 0.85rem;
             }
             
             .models-flex {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 1rem 1.5rem;
+            }
+            
+            .card-top-bar {
+                padding: 1rem;
+            }
+            
+            .card-title {
+                font-size: 0.85rem;
+            }
+            
+            .card-badge {
+                padding: 4px 10px;
+                font-size: 0.6rem;
             }
             
             .card-viewer {
-                height: 250px;
+                height: 220px;
+            }
+            
+            .load-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .load-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .loader-text {
+                font-size: 0.85rem;
+            }
+            
+            .loader-hint {
+                font-size: 0.7rem;
+            }
+            
+            .card-bottom-bar {
+                padding: 0.75rem 1rem;
+                flex-direction: column;
+                gap: 0.5rem;
             }
             
             .interaction-hints {
                 display: none;
             }
             
+            .model-credit-link {
+                text-align: center;
+                width: 100%;
+            }
+            
+            /* CTA Section Mobile */
+            .models-cta-section {
+                padding: 3rem 0;
+            }
+            
+            .cta-wrapper h2 {
+                font-size: 1.75rem;
+            }
+            
+            .cta-wrapper p {
+                font-size: 0.95rem;
+            }
+            
+            .cta-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .cta-link {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* Extra small phones */
+        @media (max-width: 480px) {
+            .models-page-hero {
+                min-height: 50vh;
+            }
+            
+            .hero-title {
+                font-size: 1.6rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .hero-stats {
+                gap: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
             .filter-pill {
-                padding: 10px 18px;
-                font-size: 0.85rem;
+                padding: 8px 12px;
+                font-size: 0.75rem;
+            }
+            
+            .brand-header {
+                padding: 1rem;
+            }
+            
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .brand-info h2 {
+                font-size: 1.25rem;
+            }
+            
+            .card-viewer {
+                height: 200px;
+            }
+            
+            .load-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .load-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .loader-text {
+                font-size: 0.8rem;
+            }
+            
+            .card-title {
+                font-size: 0.8rem;
+            }
+            
+            .cta-wrapper h2 {
+                font-size: 1.5rem;
+            }
+            
+            /* Hide heavy blur effects on small phones */
+            .glow-orb {
+                display: none;
+            }
+            
+            .hero-cyber-grid {
+                opacity: 0.5;
+            }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .model-loader:hover {
+                background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
+            }
+            
+            .model-loader:active {
+                background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            }
+            
+            .model-loader:active .load-icon {
+                transform: scale(0.95);
+                background: rgba(227, 28, 37, 0.3);
+            }
+            
+            .filter-pill:hover {
+                background: rgba(255, 255, 255, 0.03);
+                border-color: rgba(255, 255, 255, 0.1);
+                color: rgba(255, 255, 255, 0.6);
+            }
+            
+            .filter-pill:active {
+                background: rgba(227, 28, 37, 0.1);
+                border-color: rgba(227, 28, 37, 0.3);
+            }
+            
+            .filter-pill.active:hover,
+            .filter-pill.active:active {
+                background: linear-gradient(135deg, #e31c25, #ff4757);
+                color: #fff;
             }
         }
 
