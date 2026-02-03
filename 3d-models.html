@@ -39,7 +39,8 @@
                 linear-gradient(rgba(227, 28, 37, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(227, 28, 37, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
+            /* Animation disabled for performance */
+            /* animation: gridMove 20s linear infinite; */
             perspective: 500px;
         }
 
@@ -57,39 +58,7 @@
             pointer-events: none;
         }
 
-        .glow-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            animation: orbFloat 15s ease-in-out infinite;
-        }
-
-        .glow-orb-1 {
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(227, 28, 37, 0.4) 0%, transparent 70%);
-            top: -200px;
-            left: -200px;
-        }
-
-        .glow-orb-2 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255, 107, 107, 0.3) 0%, transparent 70%);
-            bottom: -150px;
-            right: -150px;
-            animation-delay: -5s;
-        }
-
-        .glow-orb-3 {
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(227, 28, 37, 0.5) 0%, transparent 70%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: orbPulse 4s ease-in-out infinite;
-        }
+        .glow-orb {\n            position: absolute;\n            border-radius: 50%;\n            filter: blur(100px);\n            /* Animation disabled for performance */\n            /* animation: orbFloat 15s ease-in-out infinite; */\n        }\n\n        .glow-orb-1 {\n            width: 600px;\n            height: 600px;\n            background: radial-gradient(circle, rgba(227, 28, 37, 0.4) 0%, transparent 70%);\n            top: -200px;\n            left: -200px;\n        }\n\n        .glow-orb-2 {\n            width: 500px;\n            height: 500px;\n            background: radial-gradient(circle, rgba(255, 107, 107, 0.3) 0%, transparent 70%);\n            bottom: -150px;\n            right: -150px;\n            /* animation-delay: -5s; */\n        }\n\n        .glow-orb-3 {\n            width: 300px;\n            height: 300px;\n            background: radial-gradient(circle, rgba(227, 28, 37, 0.5) 0%, transparent 70%);\n            top: 50%;\n            left: 50%;\n            transform: translate(-50%, -50%);\n            /* Animation disabled for performance */\n            /* animation: orbPulse 4s ease-in-out infinite; */\n        }
 
         @keyframes orbFloat {
             0%, 100% { transform: translate(0, 0) scale(1); }
@@ -450,6 +419,96 @@
             width: 100%;
             height: 100%;
             border: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .card-viewer iframe.loaded {
+            opacity: 1;
+        }
+
+        /* Loading Placeholder */
+        .model-loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
+            z-index: 1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .model-loader:hover {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+        }
+
+        .model-loader:hover .load-icon {
+            transform: scale(1.1);
+            background: rgba(227, 28, 37, 0.3);
+        }
+
+        .model-loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .load-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(227, 28, 37, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(227, 28, 37, 0.5);
+        }
+
+        .load-icon svg {
+            width: 30px;
+            height: 30px;
+            stroke: #e31c25;
+            margin-left: 4px;
+        }
+
+        .load-icon.error {
+            background: rgba(255, 100, 100, 0.2);
+            border-color: rgba(255, 100, 100, 0.5);
+            font-size: 2rem;
+            color: #ff6464;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(227, 28, 37, 0.1);
+            border-top-color: #e31c25;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-text {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+        }
+
+        .loader-hint {
+            margin-top: 0.4rem;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         .card-bottom-bar {
@@ -1583,6 +1642,162 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Optimized 3D Model Loading System - Click to Load + Smart Unloading
+        (function() {
+            const MAX_ACTIVE_MODELS = 2; // Maximum models loaded at once
+            const activeModels = new Set();
+            const modelCards = document.querySelectorAll('.model-showcase-card');
+
+            // Setup each card with click-to-load functionality
+            modelCards.forEach((card) => {
+                const viewer = card.querySelector('.card-viewer');
+                const iframe = viewer.querySelector('iframe');
+                
+                // Store src and remove it immediately to prevent loading
+                const src = iframe.src || iframe.getAttribute('data-src');
+                if (src && src.includes('sketchfab.com')) {
+                    iframe.setAttribute('data-src', src);
+                    iframe.removeAttribute('src');
+                    iframe.src = 'about:blank';
+                }
+
+                // Create click-to-load overlay
+                const loader = document.createElement('div');
+                loader.className = 'model-loader';
+                loader.innerHTML = `
+                    <div class="load-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                    <div class="loader-text">Click to load 3D model</div>
+                    <div class="loader-hint">Saves bandwidth & memory</div>
+                `;
+                viewer.insertBefore(loader, iframe);
+
+                // Click to load functionality
+                loader.addEventListener('click', function() {
+                    loadModel(card, viewer, iframe, loader);
+                });
+            });
+
+            // Load a single model
+            function loadModel(card, viewer, iframe, loader) {
+                const src = iframe.getAttribute('data-src');
+                if (!src || iframe.classList.contains('loaded')) return;
+
+                // Unload excess models if needed
+                while (activeModels.size >= MAX_ACTIVE_MODELS) {
+                    unloadFarthestModel(card);
+                }
+
+                // Show loading state
+                loader.innerHTML = `
+                    <div class="loader-spinner"></div>
+                    <div class="loader-text">Loading 3D model...</div>
+                    <div class="loader-hint">Please wait</div>
+                `;
+
+                // Load the model
+                iframe.src = src;
+                activeModels.add(card);
+
+                iframe.onload = function() {
+                    iframe.classList.add('loaded');
+                    loader.classList.add('hidden');
+                    card.classList.add('model-active');
+                };
+
+                iframe.onerror = function() {
+                    loader.innerHTML = `
+                        <div class="load-icon error">!</div>
+                        <div class="loader-text">Failed to load</div>
+                        <div class="loader-hint">Click to retry</div>
+                    `;
+                    activeModels.delete(card);
+                };
+            }
+
+            // Unload model farthest from viewport
+            function unloadFarthestModel(currentCard) {
+                let farthest = null;
+                let maxDistance = -1;
+
+                const viewportCenter = window.innerHeight / 2;
+
+                activeModels.forEach(card => {
+                    if (card === currentCard) return;
+                    const rect = card.getBoundingClientRect();
+                    const cardCenter = rect.top + rect.height / 2;
+                    const distance = Math.abs(cardCenter - viewportCenter);
+                    
+                    if (distance > maxDistance) {
+                        maxDistance = distance;
+                        farthest = card;
+                    }
+                });
+
+                if (farthest) {
+                    unloadModel(farthest);
+                }
+            }
+
+            // Unload a model to free resources
+            function unloadModel(card) {
+                const viewer = card.querySelector('.card-viewer');
+                const iframe = viewer.querySelector('iframe');
+                const loader = viewer.querySelector('.model-loader');
+
+                // Reset iframe
+                iframe.src = 'about:blank';
+                iframe.classList.remove('loaded');
+                card.classList.remove('model-active');
+
+                // Reset loader
+                loader.classList.remove('hidden');
+                loader.innerHTML = `
+                    <div class="load-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                    <div class="loader-text">Click to load 3D model</div>
+                    <div class="loader-hint">Model unloaded to save memory</div>
+                `;
+
+                // Re-add click listener
+                loader.addEventListener('click', function() {
+                    loadModel(card, viewer, iframe, loader);
+                });
+
+                activeModels.delete(card);
+            }
+
+            // Auto-unload models that are far out of view
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    const viewportTop = window.scrollY;
+                    const viewportBottom = viewportTop + window.innerHeight;
+
+                    activeModels.forEach(card => {
+                        const rect = card.getBoundingClientRect();
+                        const cardTop = rect.top + viewportTop;
+                        const cardBottom = cardTop + rect.height;
+
+                        // Unload if more than 2 viewport heights away
+                        const buffer = window.innerHeight * 2;
+                        if (cardBottom < viewportTop - buffer || cardTop > viewportBottom + buffer) {
+                            unloadModel(card);
+                        }
+                    });
+                }, 300);
+            }, { passive: true });
+        })();
+    </script>
+
     <script>
         // Brand Filter Functionality
         document.addEventListener('DOMContentLoaded', function() {
