@@ -442,6 +442,7 @@
             position: relative;
             height: 300px;
             background: #050505;
+            overflow: hidden;
         }
 
         .card-viewer iframe {
@@ -449,7 +450,9 @@
             height: 100%;
             border: none;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.8s ease;
+            transform: translateZ(0);
+            will-change: opacity;
         }
 
         .card-viewer iframe.loaded {
@@ -470,7 +473,13 @@
             background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
             z-index: 1;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+        }
+
+        .model-loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease;
         }
 
         .model-loader:hover {
@@ -1130,7 +1139,7 @@
                                 title="Toyota Hilux" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/04ae6d8e07e84f55a9e1d7e3261be171/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/04ae6d8e07e84f55a9e1d7e3261be171/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1159,7 +1168,7 @@
                                 title="Toyota AE86" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/552435085b5a4e20a0e89150c3c0f292/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/552435085b5a4e20a0e89150c3c0f292/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1188,7 +1197,7 @@
                                 title="Toyota Corolla E170 2017" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/d87af59849814c5cb35a0c233f2c2f19/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/d87af59849814c5cb35a0c233f2c2f19/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1217,7 +1226,7 @@
                                 title="2017 Toyota Camry NASCAR" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/47acf28324194731a3d317d55187248d/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/47acf28324194731a3d317d55187248d/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1246,7 +1255,7 @@
                                 title="2025 Toyota Land Cruiser 250" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/b53e78d5e3474474a788e7ef4deccda0/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/b53e78d5e3474474a788e7ef4deccda0/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1275,7 +1284,7 @@
                                 title="Toyota Crown 2025" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/9f48fc0a66e44a69a09fda2f864e5944/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/9f48fc0a66e44a69a09fda2f864e5944/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1304,7 +1313,7 @@
                                 title="1997-1999 Toyota Camry" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/f0dc4610ad3d49d69a24e3404995ab44/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/f0dc4610ad3d49d69a24e3404995ab44/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1333,7 +1342,7 @@
                                 title="Toyota Van 1982" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/d3b5955e74cc4c619c4658a0e7104f42/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/d3b5955e74cc4c619c4658a0e7104f42/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1362,7 +1371,7 @@
                                 title="Toyota GR Supra GT GT300" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/58efbe2b2e144d8e8edfcc0c64e55f88/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/58efbe2b2e144d8e8edfcc0c64e55f88/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1391,7 +1400,7 @@
                                 title="1994 Toyota Supra MK IV Bomex Fast & Furious" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/126c185845724e0eadb35229677ba44b/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/126c185845724e0eadb35229677ba44b/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1420,7 +1429,7 @@
                                 title="Supra MK4 2JZ" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/1adccf0783e04b538335ba484c5b7256/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/1adccf0783e04b538335ba484c5b7256/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1449,7 +1458,7 @@
                                 title="Toyota 2JZ GTE Engine" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/7ebc9741434540c4831453066d7ae057/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/7ebc9741434540c4831453066d7ae057/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1478,7 +1487,7 @@
                                 title="Toyota Engine 4AGE" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/7614423c647c4d16b59d5862e80bbf29/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/7614423c647c4d16b59d5862e80bbf29/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1519,7 +1528,7 @@
                                 title="Honda Integra Type R" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/8bee0362b6e14980a529e31b8482b1f1/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/8bee0362b6e14980a529e31b8482b1f1/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1560,7 +1569,7 @@
                                 title="Mazda Savanna GT Coupe" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/f2cb2bf28c644aadb728d98600440d9d/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/f2cb2bf28c644aadb728d98600440d9d/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1589,7 +1598,7 @@
                                 title="Mazda RX-7 LB" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/c5c5ad569240468e9f58a8f88e7aaaf0/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/c5c5ad569240468e9f58a8f88e7aaaf0/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1618,7 +1627,7 @@
                                 title="Mazda RX-7 Pandem" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/6abc9755ce534beb956486f47d32224a/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/6abc9755ce534beb956486f47d32224a/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1659,7 +1668,7 @@
                                 title="Nissan GT-R R34" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/46dc38bbce08434a9077e65ac750e659/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/46dc38bbce08434a9077e65ac750e659/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1700,7 +1709,7 @@
                                 title="Mercedes AMG CLS" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/88b9a904632e42d18254aa6bf5f43344/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/88b9a904632e42d18254aa6bf5f43344/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1729,7 +1738,7 @@
                                 title="Mercedes AMG W03" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/2c5582dca7d6436ab986e00814554a2a/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/2c5582dca7d6436ab986e00814554a2a/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1758,7 +1767,7 @@
                                 title="Mercedes-Benz SLS AMG Coupe" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/ecacfcd3eb124d85b3e80f8e9c5ba26a/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/ecacfcd3eb124d85b3e80f8e9c5ba26a/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1787,7 +1796,7 @@
                                 title="Mercedes-Benz A45 AMG 2018" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/9482f251f9c34a6e91d7777db5934cfc/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/9482f251f9c34a6e91d7777db5934cfc/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1816,7 +1825,7 @@
                                 title="2022 Mercedes-AMG Project ONE" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/f43c294909a84c7a9f3981111a5aa506/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/f43c294909a84c7a9f3981111a5aa506/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -1845,7 +1854,7 @@
                                 title="Mercedes-Benz G63 AMG BRABUS G700" 
                                 loading="lazy"
                                 allow="autoplay; fullscreen; xr-spatial-tracking" 
-                                src="https://sketchfab.com/models/a53e0e45b4b64dc6a65f4eeb016f01f2/embed?autospin=1&autostart=1&preload=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
+                                src="https://sketchfab.com/models/a53e0e45b4b64dc6a65f4eeb016f01f2/embed?autospin=0.3&autostart=1&preload=1&scrollwheel=1&camera=0&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&dnt=1">
                             </iframe>
                         </div>
                         <div class="card-bottom-bar">
@@ -2122,3 +2131,4 @@
     </script>
 </body>
 </html>
+
