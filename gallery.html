@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Gallery - TORQUE HILL | Cameron Highlands Car Club</title>
+    <meta name="description" content="Browse the full gallery of TORQUE HILL Car Club. See our car meets, scenic drives, and automotive events in Cameron Highlands.">
+    <meta name="keywords" content="Torque Hill gallery, car club photos, Cameron Highlands cars, automotive photos, car meet gallery">
+    <meta name="author" content="TORQUE HILL Car Club">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Gallery - TORQUE HILL Car Club">
+    <meta property="og:description" content="Browse the full gallery of TORQUE HILL Car Club events and car meets.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://torquehillcarclub.github.io/torquehillcarclub/gallery.html">
+    <meta property="og:image" content="https://torquehillcarclub.github.io/torquehillcarclub/media/torque.png">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="media/torque.png" alt="Torque Hill Logo" class="logo">
+                <span>TORQUE HILL</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-en="Home" data-zh="首页">Home</a></li>
+                <li><a href="index.html#about" data-en="About" data-zh="关于">About</a></li>
+                <li><a href="index.html#events" data-en="Events" data-zh="活动">Events</a></li>
+                <li><a href="gallery.html" class="active" data-en="Gallery" data-zh="画廊">Gallery</a></li>
+                <li><a href="index.html#showcase" data-en="Showcase" data-zh="展示">Showcase</a></li>
+                <li><a href="index.html#contact" data-en="Contact" data-zh="联系">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="language-toggle" id="langToggle" aria-label="Toggle Language">
+                    <span class="lang-text">EN</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang-text active">中文</span>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modern Gallery Hero -->
+    <section class="gallery-hero">
+        <div class="gallery-hero-bg">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="container">
+            <a href="index.html" class="back-btn-modern">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5"></path>
+                    <path d="m12 19-7-7 7-7"></path>
+                </svg>
+                <span data-en="Back to Home" data-zh="返回首页">Back to Home</span>
+            </a>
+            <div class="gallery-hero-content">
+                <div class="gallery-badge">
+                    <span class="badge-icon">📸</span>
+                    <span data-en="Photo Collection" data-zh="照片集">Photo Collection</span>
+                </div>
+                <h1 class="gallery-hero-title">
+                    <span class="title-line" data-en="Our" data-zh="我们的">Our</span>
+                    <span class="title-line highlight-text" data-en="Gallery" data-zh="画廊">Gallery</span>
+                </h1>
+                <p class="gallery-hero-desc" data-en="Capturing every moment of automotive passion and highland adventures" data-zh="捕捉汽车激情和高原冒险的每一刻">Capturing every moment of automotive passion and highland adventures</p>
+                <div class="gallery-stats">
+                    <div class="stat-box">
+                        <span class="stat-number" id="photoCount">10</span>
+                        <span class="stat-label" data-en="Photos" data-zh="照片">Photos</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-box">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label" data-en="Memories" data-zh="回忆">Memories</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-box">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label" data-en="Community" data-zh="社区">Community</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-hint">
+                <span data-en="Scroll to explore" data-zh="滚动探索">Scroll to explore</span>
+                <div class="scroll-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12l7 7 7-7"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Gallery Grid -->
+    <section class="gallery-modern">
+        <div class="container">
+            <!-- Gallery Masonry Grid -->
+            <div class="masonry-grid">
+                <div class="masonry-item masonry-tall" data-image="media/2.png">
+                    <img src="media/2.png" alt="TORQUE HILL Group Drive" class="masonry-img" loading="lazy">
+                    <div class="masonry-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                </svg>
+                            </div>
+                            <h3 data-en="Group Drive" data-zh="团体驾驶">Group Drive</h3>
+                            <p data-en="Click to enlarge" data-zh="点击放大">Click to enlarge</p>
+                        </div>
+                        <div class="corner-accents">
+                            <span class="corner top-left"></span>
+                            <span class="corner top-right"></span>
+                            <span class="corner bottom-left"></span>
+                            <span class="corner bottom-right"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item" data-image="media/3.png">
+                    <img src="media/3.png" alt="TORQUE HILL Track Day" class="masonry-img" loading="lazy">
+                    <div class="masonry-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                </svg>
+                            </div>
+                            <h3 data-en="Track Day" data-zh="赛道日">Track Day</h3>
+                            <p data-en="Click to enlarge" data-zh="点击放大">Click to enlarge</p>
+                        </div>
+                        <div class="corner-accents">
+                            <span class="corner top-left"></span>
+                            <span class="corner top-right"></span>
+                            <span class="corner bottom-left"></span>
+                            <span class="corner bottom-right"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item masonry-wide" data-image="media/990.jpeg">
+                    <img src="media/990.jpeg" alt="TORQUE HILL 990" class="masonry-img" loading="lazy">
+                    <div class="masonry-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                </svg>
+                            </div>
+                            <h3 data-en="Member Ride" data-zh="会员座驾">Member Ride</h3>
+                            <p data-en="Click to enlarge" data-zh="点击放大">Click to enlarge</p>
+                        </div>
+                        <div class="corner-accents">
+                            <span class="corner top-left"></span>
+                            <span class="corner top-right"></span>
+                            <span class="corner bottom-left"></span>
+                            <span class="corner bottom-right"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item" data-image="media/2282.jpeg">
+                    <img src="media/2282.jpeg" alt="TORQUE HILL 2282" class="masonry-img" loading="lazy">
+                    <div class="masonry-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                </svg>
+                            </div>
+                            <h3 data-en="Member Ride" data-zh="会员座驾">Member Ride</h3>
+                            <p data-en="Click to enlarge" data-zh="点击放大">Click to enlarge</p>
+                        </div>
+                        <div class="corner-accents">
+                            <span class="corner top-left"></span>
+                            <span class="corner top-right"></span>
+                            <span class="corner bottom-left"></span>
+                            <span class="corner bottom-right"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item masonry-tall" data-image="media/hilux.gif">
+                    <img src="media/hilux.gif" alt="TORQUE HILL Hilux" class="masonry-img" loading="lazy">
+                    <div class="masonry-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                </svg>
+                            </div>
+                            <h3 data-en="Hilux Action" data-zh="Hilux 动态">Hilux Action</h3>
+                            <p data-en="Click to enlarge" data-zh="点击放大">Click to enlarge</p>
+                        </div>
+                        <div class="corner-accents">
+                            <span class="corner top-left"></span>
+                            <span class="corner top-right"></span>
+                            <span class="corner bottom-left"></span>
+                            <span class="corner bottom-right"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item" data-image="media/ae101.gif">
+                    <img src="media/ae101.gif" alt="TORQUE HILL AE101" class="masonry-img" loading="lazy">
+                    <div class="masonry-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                </svg>
+                            </div>
+                            <h3 data-en="AE101" data-zh="AE101">AE101</h3>
+                            <p data-en="Click to enlarge" data-zh="点击放大">Click to enlarge</p>
+                        </div>
+                        <div class="corner-accents">
+                            <span class="corner top-left"></span>
+                            <span class="corner top-right"></span>
+                            <span class="corner bottom-left"></span>
+                            <span class="corner bottom-right"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item masonry-wide" data-image="media/4.jpg">
+                    <img src="media/4.jpg" alt="TORQUE HILL Car Meet" class="masonry-img" loading="lazy">
+                    <div class="masonry-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                </svg>
+                            </div>
+                            <h3 data-en="Car Meet" data-zh="汽车聚会">Car Meet</h3>
+                            <p data-en="Click to enlarge" data-zh="点击放大">Click to enlarge</p>
+                        </div>
+                        <div class="corner-accents">
+                            <span class="corner top-left"></span>
+                            <span class="corner top-right"></span>
+                            <span class="corner bottom-left"></span>
+                            <span class="corner bottom-right"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item" data-image="media/5.jpg">
+                    <img src="media/5.jpg" alt="TORQUE HILL Drive" class="masonry-img" loading="lazy">
+                    <div class="masonry-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                </svg>
+                            </div>
+                            <h3 data-en="Scenic Drive" data-zh="风景驾驶">Scenic Drive</h3>
+                            <p data-en="Click to enlarge" data-zh="点击放大">Click to enlarge</p>
+                        </div>
+                        <div class="corner-accents">
+                            <span class="corner top-left"></span>
+                            <span class="corner top-right"></span>
+                            <span class="corner bottom-left"></span>
+                            <span class="corner bottom-right"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item" data-image="media/10.jpeg">
+                    <img src="media/10.jpeg" alt="TORQUE HILL Event" class="masonry-img" loading="lazy">
+                    <div class="masonry-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                </svg>
+                            </div>
+                            <h3 data-en="Club Event" data-zh="俱乐部活动">Club Event</h3>
+                            <p data-en="Click to enlarge" data-zh="点击放大">Click to enlarge</p>
+                        </div>
+                        <div class="corner-accents">
+                            <span class="corner top-left"></span>
+                            <span class="corner top-right"></span>
+                            <span class="corner bottom-left"></span>
+                            <span class="corner bottom-right"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-en="Want to be featured?" data-zh="想要被展示？">Want to be featured?</h2>
+                <p data-en="Join TORQUE HILL and share your automotive journey with our community" data-zh="加入 TORQUE HILL，与我们的社区分享您的汽车旅程">Join TORQUE HILL and share your automotive journey with our community</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScpekSsdllzJqrwIO35U0nBePTTWSd5483W23tGuI9l2rQrhQ/viewform?usp=dialog" target="_blank" class="cta-btn">
+                    <span data-en="Join Now" data-zh="立即加入">Join Now</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageLightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-zoom-controls">
+            <button class="zoom-btn zoom-in" id="zoomIn" aria-label="Zoom In">+</button>
+            <button class="zoom-btn zoom-out" id="zoomOut" aria-label="Zoom Out">−</button>
+            <button class="zoom-btn zoom-reset" id="zoomReset" aria-label="Reset Zoom">⟲</button>
+        </div>
+        <div class="lightbox-image-container">
+            <img class="lightbox-content" id="lightboxImage">
+        </div>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">TORQUE<span class="highlight">HILL</span></h3>
+                    <p data-en="Cameron Highlands Premier Car Club" data-zh="金马仑高原首屈一指的汽车俱乐部">Cameron Highlands Premier Car Club</p>
+                    <p class="footer-tagline" data-en="Where Passion Meets Performance" data-zh="激情与性能的完美结合">Where Passion Meets Performance</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-en="Quick Links" data-zh="快速链接">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-zh="首页">Home</a></li>
+                        <li><a href="index.html#about" data-en="About Us" data-zh="关于我们">About Us</a></li>
+                        <li><a href="index.html#events" data-en="Events" data-zh="活动">Events</a></li>
+                        <li><a href="gallery.html" data-en="Gallery" data-zh="画廊">Gallery</a></li>
+                        <li><a href="index.html#contact" data-en="Join Us" data-zh="加入我们">Join Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-en="Get In Touch" data-zh="联系我们">Get In Touch</h4>
+                    <ul>
+                        <li>📧 torquehillclub@gmail.com</li>
+                        <li>📱 +60163452282</li>
+                        <li>📱 01111990990</li>
+                        <li data-en="📍 Cameron Highlands, Pahang" data-zh="📍 彭亨州金马仑高原">📍 Cameron Highlands, Pahang</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4 data-en="Follow Us" data-zh="关注我们">Follow Us</h4>
+                    <a href="https://www.instagram.com/_torquehill_?igsh=MWhjZW42Z3lqbDQ1aw==" target="_blank" class="footer-social-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        @_torquehill_
+                    </a>
+                    <p class="footer-follow" data-en="Join our community of car enthusiasts" data-zh="加入我们的汽车爱好者社区">Join our community of car enthusiasts</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-line"></div>
+                <p class="footer-copyright" data-en="&copy; 2025 TORQUE HILL. All rights reserved." data-zh="&copy; 2025 TORQUE HILL. 版权所有">&copy; 2025 TORQUE HILL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize masonry items click for lightbox
+        document.querySelectorAll('.masonry-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const imageSrc = this.getAttribute('data-image');
+                const imgAlt = this.querySelector('img').getAttribute('alt');
+                const lightbox = document.getElementById('imageLightbox');
+                const lightboxImg = document.getElementById('lightboxImage');
+                const lightboxCaption = document.getElementById('lightboxCaption');
+                
+                lightboxImg.src = imageSrc;
+                lightboxCaption.textContent = imgAlt;
+                lightbox.classList.add('active');
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close lightbox functionality for gallery page
+        const galleryLightbox = document.getElementById('imageLightbox');
+        const galleryLightboxClose = document.querySelector('.lightbox-close');
+        
+        function closeGalleryLightbox() {
+            galleryLightbox.classList.remove('active');
+            galleryLightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        if (galleryLightboxClose) {
+            galleryLightboxClose.addEventListener('click', closeGalleryLightbox);
+        }
+        
+        galleryLightbox.addEventListener('click', function(e) {
+            if (e.target === galleryLightbox) {
+                closeGalleryLightbox();
+            }
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && galleryLightbox.classList.contains('active')) {
+                closeGalleryLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
